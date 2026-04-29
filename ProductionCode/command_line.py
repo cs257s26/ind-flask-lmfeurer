@@ -7,8 +7,8 @@ datasets = {
     "women": []
 }
 
-FILENAME_LITERACY = "./data/literacy-rates-vs-average-years-of-schooling.csv"
-FILENAME_WOMEN = "./data/share-of-women-in-local-government.csv"
+FILENAME_LITERACY = "ProductionCode/literacy-rates-vs-average-years-of-schooling.csv"
+FILENAME_WOMEN = "ProductionCode/share-of-women-in-local-government.csv"
 
 def load_data():
     with open(FILENAME_LITERACY, newline='') as f:
@@ -124,8 +124,8 @@ def get_country_literacy_growth (country: str) ->str:
     percent_increase = (((last["rate"] - first["rate"]) / first["rate"])*100)
 
     return (f"In {country}, the first recorded literacy rate was {first['rate']}% "
-            f"in {first['year']}.\nMost recently, in {last['year']}, "
-            f"the literacy rate was {last['rate']}%.\n"
+            f"in {first['year']}.<br>Most recently, in {last['year']}, "
+            f"the literacy rate was {last['rate']}%.<br>"
             f"That's a {percent_increase:.2f}% increase.")
 
 def main():
