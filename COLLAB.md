@@ -1,3 +1,3 @@
 # Collaboration
 
-Put any sources (not included in the assignment) that you referenced in doing this assignment. This includes: websites, people you consulted, and (where sanctioned) GenAI prompts and chatlogs. Include a brief sentence on how you used each resource.
+- https://www.geeksforgeeks.org/python/python-list-clear-method/ (updated in July 2025) - I used this to figure out how to clear a list in Python because I wanted to clear and reload the data in my setup function because I was running into a problem where loading the data multiple times was adding unnecessary rows. 
