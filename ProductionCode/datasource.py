@@ -51,7 +51,7 @@ def get_countries_literacy_rate(connection, temp: str) -> list:
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT * FROM literacy_rates_vs_avg_years_of_schooling WHERE entity=%s ORDER BY date_year DESC;"
+        query = "SELECT entity, date_year, lit_rate FROM literacy_rates_vs_avg_years_of_schooling WHERE entity=%s ORDER BY date_year DESC;"
         cursor.execute(query, (temp,))
         return cursor.fetchall()
 
@@ -63,9 +63,16 @@ def main():
     # Connect to the database
     connection = connect()
 
-    # Execute a simple query: how many earthquakes above the specified magnitude are there in the data?
-    results = get_max_temp_over_threshold(connection, 50)
+    # Execute a simple query
+    results = get_avg_years_of_schooling(connection, "United States", 2000, 2020)
     
+    if results is not None:
+        print("Query results: ")
+        for item in results:
+            print(item)
+
+    results = get_countries_literacy_rate(connection, "Mexico")
+
     if results is not None:
         print("Query results: ")
         for item in results:
