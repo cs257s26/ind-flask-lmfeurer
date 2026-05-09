@@ -40,14 +40,14 @@ def get_avg_years_of_schooling(connection, country: str, start_date: int, end_da
         return None
 
 def get_countries_literacy_rate(connection, temp: str) -> list:
-    """Retrieves literacy data points (and all the literacy information associated with that country) 
+    """Retrieves literacy data points from a country over time 
 
     Args:
         connection (psycopg2.connection) - the connection to the database
         temp (str) - the country of interest
 
     Returns:
-        list - a list of all literacy information from the country
+        list - a list of literacy information from the country
     """
     try:
         cursor = connection.cursor()
