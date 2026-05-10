@@ -31,7 +31,7 @@ def get_avg_years_of_schooling(connection, country: str, start_date: int, end_da
     """
     try:
         cursor = connection.cursor()
-        query = "SELECT entity, avg_years_of_schooling FROM literacy_rates_vs_avg_years_of_schooling WHERE date_year>=%s AND date_year<=%s AND entity=%s ORDER BY date_year DESC;"
+        query = "SELECT entity, date_year, avg_years_of_schooling FROM literacy_rates_vs_avg_years_of_schooling WHERE date_year>=%s AND date_year<=%s AND entity=%s ORDER BY date_year DESC;"
         cursor.execute(query, (start_date, end_date, country,))
         return cursor.fetchall()
 
